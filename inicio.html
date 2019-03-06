@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="label">Sección:</div>
-				<div class="input txt-title" id="title"></div>
+				<input class="input txt-title" id="title" />
 
 				<div class="label">Texto de Sección:</div>
 				<textarea class="textarea txt-text" id="text"></textarea>
@@ -23,20 +23,17 @@
 		<div class="row">
 			<div class="col-7">
 				<div class="input txt-img-preview">
-					<!--<div class="delete-img">
-						x
-					</div>-->
-					<span class="file-return"></span>
+					<span class="file-return" data-file="file"></span>
 				</div>
 
 				
 				<div class="input-file-container btn-orange">  
-    				<input class="input-file" id="file" type="file">
-    				<label tabindex="0" for="file" class="input-file-trigger">Agregar imagen</label>
+    				<input class="input-file" id="file" type="file" data-file="file">
+    				<label tabindex="0" for="file" class="input-file-trigger" data-file="file">Cambiar imagen</label>
 				</div>
 			</div>
 			<div class="col-5">
-				<!--<div class="img-preview-slider"></div>-->
+				<div class="img-preview-slider" data-file="url"></div>
 			</div>
 		</div>
 	</div>

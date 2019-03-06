@@ -3,7 +3,7 @@
 		<div class="title">Acerca</div>
 
 		<div class="btns-right float-right">
-			<div class="btn-blue" id="save-inicio">
+			<div class="btn-blue" id="save-acerca">
 				Guardar
 			</div>
 		</div>
@@ -12,10 +12,10 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="label">Sección:</div>
-				<div class="input txt-title"></div>
+				<input class="input txt-title" id="title" />
 
 				<div class="label">Texto de Sección:</div>
-				<textarea class="textarea txt-text"></textarea>
+				<textarea class="textarea txt-text" id="text"></textarea>
 
 				<div class="label">Imagen de sección:</div>
 			</div>
@@ -23,17 +23,176 @@
 		<div class="row">
 			<div class="col-7">
 				<div class="input txt-img-preview">
-					<div class="delete-img">
-						x
-					</div>
+					<span class="file-return" data-file="file"></span>
 				</div>
 
-				<div class="btn-orange" id="save-inicio">
-					Guardar
+				
+				<div class="input-file-container btn-orange">  
+    				<input class="input-file" id="file" type="file" data-file="file">
+    				<label tabindex="0" for="file" class="input-file-trigger" data-file="file">Cambiar imagen</label>
 				</div>
 			</div>
 			<div class="col-5">
-				<div class="img-preview-slider"></div>
+				<div class="img-preview-slider" data-file="url"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="contenido margin">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="title text-center">Caja 1</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Titulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="titlebox1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Subtitulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="subtitlebox1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Video:</div>
+			</div>
+			<div class="col-10">
+				<textarea class="textarea" id="videobox1"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Iconografía:</div>
+			</div>
+			<div class="col-5">
+				<div class="input txt-img-preview">
+					<span class="file-return" data-file="icono1"></span>
+				</div>
+
+				
+				<div class="input-file-container btn-orange">  
+    				<input class="input-file" id="icono1" type="file" data-file="icono1">
+    				<label tabindex="0" for="icono1" class="input-file-trigger" data-file="icono1">Cambiar imagen</label>
+				</div>
+			</div>
+			<div class="col-5">
+				<div class="img-preview-slider" data-file="icono1"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="contenido margin">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="title text-center">Caja 2</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Titulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="titlebox2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Subtitulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="subtitlebox2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Video:</div>
+			</div>
+			<div class="col-10">
+				<textarea class="textarea" id="videobox2"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Iconografía:</div>
+			</div>
+			<div class="col-5">
+				<div class="input txt-img-preview">
+					<span class="file-return" data-file="icono2"></span>
+				</div>
+
+				
+				<div class="input-file-container btn-orange">  
+    				<input class="input-file" id="icono2" type="file" data-file="icono2">
+    				<label tabindex="0" for="icono2" class="input-file-trigger" data-file="icono2">Cambiar imagen</label>
+				</div>
+			</div>
+			<div class="col-5">
+				<div class="img-preview-slider" data-file="icono2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="contenido margin">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="title text-center">Caja 3</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Titulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="titlebox3">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Subtitulo:</div>
+			</div>
+			<div class="col-10">
+				<input class="input txt-title" id="subtitlebox3">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Video:</div>
+			</div>
+			<div class="col-10">
+				<textarea class="textarea" id="videobox3"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="label text-right">Iconografía:</div>
+			</div>
+			<div class="col-5">
+				<div class="input txt-img-preview">
+					<span class="file-return" data-file="icono3"></span>
+				</div>
+
+				
+				<div class="input-file-container btn-orange">  
+    				<input class="input-file" id="icono3" type="file" data-file="icono3">
+    				<label tabindex="0" for="icono3" class="input-file-trigger" data-file="icono3">Cambiar imagen</label>
+				</div>
+			</div>
+			<div class="col-5">
+				<div class="img-preview-slider" data-file="icono3"></div>
 			</div>
 		</div>
 	</div>

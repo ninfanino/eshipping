@@ -3,7 +3,7 @@
 		<div class="title">Contacto</div>
 
 		<div class="btns-right float-right">
-			<div class="btn-blue" id="save-inicio">
+			<div class="btn-blue" id="save-contacto">
 				Guardar
 			</div>
 		</div>
@@ -11,8 +11,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12">
-				<div class="label">Titulo de sección:</div>
-				<div class="input txt-title"></div>
+				<div class="label">Titulo de Sección:</div>
+				<input class="input txt-title" id="title" />
 
 				<div class="label">Imagen de sección:</div>
 			</div>
@@ -20,17 +20,17 @@
 		<div class="row">
 			<div class="col-7">
 				<div class="input txt-img-preview">
-					<div class="delete-img">
-						x
-					</div>
+					<span class="file-return" data-file="file"></span>
 				</div>
 
-				<div class="btn-orange" id="save-inicio">
-					Cambiar imagen
+				
+				<div class="input-file-container btn-orange">  
+    				<input class="input-file" id="file" type="file" data-file="file">
+    				<label tabindex="0" for="file" class="input-file-trigger" data-file="file">Cambiar imagen</label>
 				</div>
 			</div>
 			<div class="col-5">
-				<div class="img-preview-slider"></div>
+				<div class="img-preview-slider" data-file="url"></div>
 			</div>
 		</div>
 	</div>
