@@ -25,6 +25,9 @@ $(function() {
         var str2 = arr.join('<p class="nuevo">');
         $("." + key).html('<p>' + str2 + '</p>');
       }
+      if(key == 'legend') {
+        $('#legend').html(data.val()[key]);
+      } 
     }
   });
 

@@ -96,8 +96,6 @@
     }});
   });
 
-  
-
   $(document).on('click', '.input-file-trigger', function() {
      var attr = $(this).attr('data-file');
      $( ".input-file[data-file='"+attr+"']" ).focus();
@@ -196,10 +194,12 @@
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
       var text = $("#text").val();
+      var legend = $("#legend").val();
 
       var data = {
           title:title, 
-          text:text
+          text:text,
+          legend:legend
       };
 
       firebase.database().ref("data/privacidad").update(data).then(() => {
