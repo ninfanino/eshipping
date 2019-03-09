@@ -1,12 +1,12 @@
 (function() {
 
   var config = {
-    apiKey: "AIzaSyAJV8CbDt4aysJwLF8AlXA7q2PUA2-amq0",
-    authDomain: "eshipping-c15b7.firebaseapp.com",
-    databaseURL: "https://eshipping-c15b7.firebaseio.com",
-    projectId: "eshipping-c15b7",
-    storageBucket: "eshipping-c15b7.appspot.com",
-    messagingSenderId: "276298360377"
+    apiKey: "AIzaSyCCtVQwtdcD12OS5Rio-FETZFWWpjqxWX4",
+    authDomain: "eshipping-302cc.firebaseapp.com",
+    databaseURL: "https://eshipping-302cc.firebaseio.com",
+    projectId: "eshipping-302cc",
+    storageBucket: "eshipping-302cc.appspot.com",
+    messagingSenderId: "658152940271"
   };
   firebase.initializeApp(config);
 
