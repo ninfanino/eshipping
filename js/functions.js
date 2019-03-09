@@ -24,11 +24,11 @@
 
   firebase.auth().onAuthStateChanged(firebaseUser => {
   	if(firebaseUser) {
-  		var currentUser = firebase.auth().currentUser;
+  		
   		$('.pre-loader').addClass('show');
-  		/**/$('.blurred-bg-container').addClass('hidden');
+  		$('.blurred-bg-container').addClass('hidden');
   		$('.container-web').removeClass('hidden');
-  		$('.name-user').html(currentUser.email);
+  		
 
       $.ajax({
         url: 'inicio.html', 
@@ -61,6 +61,12 @@
   	}
   
   });
+
+  $(document).on('click', '.logout', function() {
+      firebase.auth().signOut();
+      $('.blurred-bg-container').removeClass('hidden');
+      $('.container-web').addClass('hidden');
+  }); 
 
   $(document).on('click', '.btn-menu', function() {
     $('.pre-loader').addClass('show');

@@ -7,6 +7,11 @@ html,body{
 	font-family: 'Asap', sans-serif;
 	background: #F8F8F8;
 }
+.logout {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
 .blurred-bg-container {
 	background: url('../assets/img/bg-backend.jpg');
 	height: 100vh; /* h */
