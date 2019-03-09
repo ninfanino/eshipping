@@ -80,7 +80,7 @@
               for(obj in objKey){
                 let key = objKey[obj];
 
-                if((key != 'url') && (key != 'icono1') && (key != 'icono2') && (key != 'icono3')) {
+                if((key != 'url') && (key != 'icono1') && (key != 'icono2') && (key != 'icono3') && (key != 'icono4') && (key != 'icono5') && (key != 'icono6') && (key != 'icono7')) {
                   $("#" + key).val(data.val()[key]);
                 } else {
                   
@@ -114,12 +114,11 @@
   $(document).on('click', '#save-inicio', function() {
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
-      var text = $("#text").val();
+      //var text = $("#text").val();
       var file = $(".input-file")[0].files[0];
 
       var data = {
-          title:title, 
-          text:text
+          title:title
       };
 
       firebase.database().ref("data/inicio").update(data);
@@ -138,12 +137,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
+        var uploadTask1 = storageRef.child('imagen/'+ nameFile).put(file);
 
         
-        subirImagenAFirebase(file, uploadTask, 'inicio', 'url');
+        subirImagenAFirebase(file, uploadTask1, 'inicio', 'url');
 
-        uploadTask.on(
+        uploadTask1.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -232,17 +231,14 @@
 
       var titlebox1 = $("#titlebox1").val();
       var subtitlebox1 = $("#subtitlebox1").val();
-      var videobox1 = $("#videobox1").val();
       var icono1 = $("#icono1")[0].files[0];
 
       var titlebox2 = $("#titlebox2").val();
       var subtitlebox2 = $("#subtitlebox2").val();
-      var videobox2 = $("#videobox2").val();
       var icono2 = $("#icono2")[0].files[0];
 
       var titlebox3 = $("#titlebox3").val();
       var subtitlebox3 = $("#subtitlebox3").val();
-      var videobox3 = $("#videobox3").val();
       var icono3 = $("#icono3")[0].files[0];
 
       var data = {
@@ -250,23 +246,17 @@
           text:text,
           titlebox1:titlebox1,
           subtitlebox1:subtitlebox1,
-          videobox1:videobox1,
           titlebox2:titlebox2,
           subtitlebox2:subtitlebox2,
-          videobox2:videobox2,
           titlebox3:titlebox3,
-          subtitlebox3:subtitlebox3,
-          videobox3:videobox3
+          subtitlebox3:subtitlebox3
       };
 
       
       firebase.database().ref("data/acerca").update(data);
 
       var count = 0;
-
-      if($("#file").val() != '') {
-        count++;
-        function guid() {
+      function guid() {
           function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
               .toString(16)
@@ -274,13 +264,17 @@
           }
           return s4() + s4();
         }
+
+      if($("#file").val() != '') {
+        count++;
+        
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
-        subirImagenAFirebase(file, uploadTask, 'acerca', 'url');
+        var uploadTask2 = storageRef.child('imagen/'+ nameFile).put(file);
+        subirImagenAFirebase(file, uploadTask2, 'acerca', 'url');
 
-        uploadTask.on(
+        uploadTask2.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -295,23 +289,16 @@
 
       if($("#icono1").val() != '') {
         count++;
-        function guid() {
-          function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-          }
-          return s4() + s4();
-        }
+        
         var nameFile1 = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono1);
+        var uploadTask3 = storageRef.child('imagen/'+ nameFile1).put(icono1);
 
         
-        subirImagenAFirebase(icono1, uploadTask, 'acerca', 'icono1');
+        subirImagenAFirebase(icono1, uploadTask3, 'acerca', 'icono1');
 
-        uploadTask.on(
+        uploadTask3.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -326,23 +313,16 @@
 
       if($("#icono2").val() != '') {
         count++;
-        function guid() {
-          function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-          }
-          return s4() + s4();
-        }
+        
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono2);
+        var uploadTask4 = storageRef.child('imagen/'+ nameFile).put(icono2);
 
         
-        subirImagenAFirebase(icono2, uploadTask, 'acerca', 'icono2');
+        subirImagenAFirebase(icono2, uploadTask4, 'acerca', 'icono2');
 
-        uploadTask.on(
+        uploadTask4.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -368,12 +348,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono3);
+        var uploadTask5 = storageRef.child('imagen/'+ nameFile).put(icono3);
 
         
-        subirImagenAFirebase(icono3, uploadTask, 'acerca', 'icono3');
+        subirImagenAFirebase(icono3, uploadTask5, 'acerca', 'icono3');
 
-        uploadTask.on(
+        uploadTask5.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -395,6 +375,9 @@
   $(document).on('click', '#save-envios', function() {
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
+      var subtitle = $("#subtitle").val();
+      var slogan = $("#slogan").val();
+      var video = $("#video").val();
       var file = $("#file")[0].files[0];
 
       var titlebox1 = $("#titlebox1").val();
@@ -414,6 +397,9 @@
 
       var data = {
           title:title, 
+          subtitle:subtitle, 
+          video:video, 
+          slogan:slogan, 
           titlebox1:titlebox1,
           subtitlebox1:subtitlebox1,
           descripcionbox1:descripcionbox1,
@@ -443,10 +429,10 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
-        subirImagenAFirebase(file, uploadTask, 'envios', 'url');
+        var uploadTask6 = storageRef.child('imagen/'+ nameFile).put(file);
+        subirImagenAFirebase(file, uploadTask6, 'envios', 'url');
 
-        uploadTask.on(
+        uploadTask6.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -469,15 +455,15 @@
           }
           return s4() + s4();
         }
-        var nameFile1 = guid();
+        var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono1);
+        var uploadTask7 = storageRef.child('imagen/'+ nameFile).put(icono1);
 
         
-        subirImagenAFirebase(icono1, uploadTask, 'envios', 'icono1');
+        subirImagenAFirebase(icono1, uploadTask7, 'envios', 'icono1');
 
-        uploadTask.on(
+        uploadTask7.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -503,12 +489,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono2);
+        var uploadTask8 = storageRef.child('imagen/'+ nameFile).put(icono2);
 
         
-        subirImagenAFirebase(icono2, uploadTask, 'envios', 'icono2');
+        subirImagenAFirebase(icono2, uploadTask8, 'envios', 'icono2');
 
-        uploadTask.on(
+        uploadTask8.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -534,12 +520,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono3);
+        var uploadTask9 = storageRef.child('imagen/'+ nameFile).put(icono3);
 
         
-        subirImagenAFirebase(icono3, uploadTask, 'envios', 'icono3');
+        subirImagenAFirebase(icono3, uploadTask9, 'envios', 'icono3');
 
-        uploadTask.on(
+        uploadTask9.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -578,6 +564,26 @@
       var descripcionbox3 = $("#descripcionbox3").val();
       var icono3 = $("#icono3")[0].files[0];
 
+      var titlebox4 = $("#titlebox4").val();
+      var subtitlebox4 = $("#subtitlebox4").val();
+      var descripcionbox4 = $("#descripcionbox4").val();
+      var icono4 = $("#icono4")[0].files[0];
+
+      var titlebox5 = $("#titlebox5").val();
+      var subtitlebox5 = $("#subtitlebox5").val();
+      var descripcionbox5 = $("#descripcionbox5").val();
+      var icono5 = $("#icono5")[0].files[0];
+
+      var titlebox6 = $("#titlebox6").val();
+      var subtitlebox6 = $("#subtitlebox6").val();
+      var descripcionbox6 = $("#descripcionbox6").val();
+      var icono6 = $("#icono6")[0].files[0];
+
+      var titlebox7 = $("#titlebox7").val();
+      var subtitlebox7 = $("#subtitlebox7").val();
+      var descripcionbox7 = $("#descripcionbox7").val();
+      var icono7 = $("#icono7")[0].files[0];
+
       var data = {
           title:title, 
           titlebox1:titlebox1,
@@ -588,7 +594,19 @@
           descripcionbox2:descripcionbox2,
           titlebox3:titlebox3,
           subtitlebox3:subtitlebox3,
-          descripcionbox3:descripcionbox3
+          descripcionbox3:descripcionbox3,
+          titlebox4:titlebox4,
+          subtitlebox4:subtitlebox4,
+          descripcionbox4:descripcionbox4,
+          titlebox5:titlebox5,
+          subtitlebox5:subtitlebox5,
+          descripcionbox5:descripcionbox5,
+          titlebox6:titlebox6,
+          subtitlebox6:subtitlebox6,
+          descripcionbox6:descripcionbox6,
+          titlebox7:titlebox7,
+          subtitlebox7:subtitlebox7,
+          descripcionbox7:descripcionbox7
       };
 
       
@@ -608,10 +626,10 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
-        subirImagenAFirebase(file, uploadTask, 'tpl', 'url');
+        var uploadTask10 = storageRef.child('imagen/'+ nameFile).put(file);
+        subirImagenAFirebase(file, uploadTask10, 'tpl', 'url');
 
-        uploadTask.on(
+        uploadTask10.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -634,15 +652,15 @@
           }
           return s4() + s4();
         }
-        var nameFile1 = guid();
+        var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono1);
+        var uploadTask11 = storageRef.child('imagen/'+ nameFile).put(icono1);
 
         
-        subirImagenAFirebase(icono1, uploadTask, 'tpl', 'icono1');
+        subirImagenAFirebase(icono1, uploadTask11, 'tpl', 'icono1');
 
-        uploadTask.on(
+        uploadTask11.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -668,12 +686,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono2);
+        var uploadTask12 = storageRef.child('imagen/'+ nameFile).put(icono2);
 
         
-        subirImagenAFirebase(icono2, uploadTask, 'tpl', 'icono2');
+        subirImagenAFirebase(icono2, uploadTask12, 'tpl', 'icono2');
 
-        uploadTask.on(
+        uploadTask12.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -699,12 +717,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono3);
+        var uploadTask13 = storageRef.child('imagen/'+ nameFile).put(icono3);
 
         
-        subirImagenAFirebase(icono3, uploadTask, 'tpl', 'icono3');
+        subirImagenAFirebase(icono3, uploadTask13, 'tpl', 'icono3');
 
-        uploadTask.on(
+        uploadTask13.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -717,7 +735,131 @@
         );
       } 
 
-      if(($("#file").val() == '') && ($("#icono1").val() == '') && ($("#icono2").val() == '') && ($("#icono3").val() == '')) {
+      if($("#icono4").val() != '') {
+        count++;
+        function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4();
+        }
+        var nameFile = guid();
+
+
+        var uploadTask14 = storageRef.child('imagen/'+ nameFile).put(icono4);
+
+        
+        subirImagenAFirebase(icono4, uploadTask14, 'tpl', 'icono4');
+
+        uploadTask14.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          null,
+          null,
+          function() {
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
+          }
+        );
+      } 
+
+      if($("#icono5").val() != '') {
+        count++;
+        function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4();
+        }
+        var nameFile = guid();
+
+
+        var uploadTask15 = storageRef.child('imagen/'+ nameFile).put(icono5);
+
+        
+        subirImagenAFirebase(icono5, uploadTask15, 'tpl', 'icono5');
+
+        uploadTask15.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          null,
+          null,
+          function() {
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
+          }
+        );
+      } 
+
+      if($("#icono6").val() != '') {
+        count++;
+        function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4();
+        }
+        var nameFile = guid();
+
+
+        var uploadTask16 = storageRef.child('imagen/'+ nameFile).put(icono6);
+
+        
+        subirImagenAFirebase(icono6, uploadTask16, 'tpl', 'icono6');
+
+        uploadTask16.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          null,
+          null,
+          function() {
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
+          }
+        );
+      } 
+
+      if($("#icono7").val() != '') {
+        count++;
+        function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4();
+        }
+        var nameFile = guid();
+
+
+        var uploadTask17 = storageRef.child('imagen/'+ nameFile).put(icono7);
+
+        
+        subirImagenAFirebase(icono7, uploadTask17, 'tpl', 'icono7');
+
+        uploadTask17.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          null,
+          null,
+          function() {
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
+          }
+        );
+      } 
+
+      if(($("#file").val() == '') && ($("#icono1").val() == '') && ($("#icono2").val() == '') && ($("#icono3").val() == '') && ($("#icono4").val() == '') && ($("#icono5").val() == '') && ($("#icono6").val() == '') && ($("#icono7").val() == '')) {
         $('.pre-loader').removeClass('show');
       }
 
@@ -761,6 +903,7 @@
       var count = 0;
 
       if($("#file").val() != '') {
+        console.log('file consultoria');
         count++;
         function guid() {
           function s4() {
@@ -773,10 +916,10 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
-        subirImagenAFirebase(file, uploadTask, 'consultoria', 'url');
+        var uploadTask18 = storageRef.child('imagen/'+ nameFile).put(file);
+        subirImagenAFirebase(file, uploadTask18, 'consultoria', 'url');
 
-        uploadTask.on(
+        uploadTask18.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -799,15 +942,15 @@
           }
           return s4() + s4();
         }
-        var nameFile1 = guid();
+        var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono1);
+        var uploadTask19 = storageRef.child('imagen/'+ nameFile).put(icono1);
 
         
-        subirImagenAFirebase(icono1, uploadTask, 'consultoria', 'icono1');
+        subirImagenAFirebase(icono1, uploadTask19, 'consultoria', 'icono1');
 
-        uploadTask.on(
+        uploadTask19.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -833,12 +976,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono2);
+        var uploadTask20 = storageRef.child('imagen/'+ nameFile).put(icono2);
 
         
-        subirImagenAFirebase(icono2, uploadTask, 'consultoria', 'icono2');
+        subirImagenAFirebase(icono2, uploadTask20, 'consultoria', 'icono2');
 
-        uploadTask.on(
+        uploadTask20.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -864,12 +1007,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(icono3);
+        var uploadTask21 = storageRef.child('imagen/'+ nameFile).put(icono3);
 
         
-        subirImagenAFirebase(icono3, uploadTask, 'consultoria', 'icono3');
+        subirImagenAFirebase(icono3, uploadTask21, 'consultoria', 'icono3');
 
-        uploadTask.on(
+        uploadTask21.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -892,10 +1035,12 @@
   $(document).on('click', '#save-contacto', function() {
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
+      var subtitle = $("#subtitle").val();
       var file = $(".input-file")[0].files[0];
 
       var data = {
-          title:title
+          title:title,
+          subtitle:subtitle
       };
 
       firebase.database().ref("data/contacto").update(data);
@@ -914,12 +1059,12 @@
         var nameFile = guid();
 
 
-        var uploadTask = storageRef.child('imagen/'+ nameFile).put(file);
+        var uploadTask22 = storageRef.child('imagen/'+ nameFile).put(file);
 
         
-        subirImagenAFirebase(file, uploadTask, 'contacto', 'url');
+        subirImagenAFirebase(file, uploadTask22, 'contacto', 'url');
         
-        uploadTask.on(
+        uploadTask22.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
@@ -946,6 +1091,7 @@
   }
 
   function crearNodoEnBDFirebase(downloadURL, page, type) {
+    console.log(page);
     if(type == 'url') {
       firebase.database().ref("data/" + page).update({url:downloadURL});
     }
@@ -957,6 +1103,18 @@
     }
     if(type == 'icono3') {
       firebase.database().ref("data/" + page).update({icono3:downloadURL});
+    } 
+    if(type == 'icono4') {
+      firebase.database().ref("data/" + page).update({icono4:downloadURL});
+    } 
+    if(type == 'icono5') {
+      firebase.database().ref("data/" + page).update({icono5:downloadURL});
+    } 
+    if(type == 'icono6') {
+      firebase.database().ref("data/" + page).update({icono6:downloadURL});
+    } 
+    if(type == 'icono7') {
+      firebase.database().ref("data/" + page).update({icono7:downloadURL});
     }   
   }
 
