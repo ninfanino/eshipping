@@ -160,4 +160,33 @@ $(function() {
   $(document).on('click', '.item-menu-mobile', function() {
       $('.open-menu-mobile').removeClass('open');
   });
+
+
+  $(document).on('click', '.btn-send', function() {
+      var name = $('#name').val();
+      var email = $('#email').val();
+      var telefono = $('#telefono').val();
+      var mensaje = $('#mensaje').val();
+
+      var data = {
+        name: name,
+        email: email,
+        telefono: telefono,
+        mensaje: mensaje
+      };
+
+      if(name != "" && email != "" && telefono != "" && mensaje != "") {
+        $('.contact-msj').html('');
+        $.ajax({
+            type: "POST",
+            url: "email.php",
+            data: data,
+            success: function(data){
+                $('.contact-msj').html(data);
+            }
+        });
+      } else {
+        $('.contact-msj').html('Falta información');
+      }
+  });
 });
