@@ -21,7 +21,9 @@ $(function() {
       } 
       if(key == 'text') {
         var str = data.val()[key].replace(/\n/g, '</p><p>');
-        $('.text').html('<p class="nuevo">' + str + '</p>');
+        var arr = str.split('<p></p><p>');
+        var str2 = arr.join('<p class="nuevo">');
+        $("." + key).html('<p>' + str2 + '</p>');
       }
     }
   });
