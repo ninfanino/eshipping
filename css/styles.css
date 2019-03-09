@@ -567,6 +567,10 @@ footer a:hover, .open-menu-mobile a:hover {
 }
 .section-terminos {
 	top: 120px;
+	background: url(../assets/img/terminos.png) no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	padding-bottom: 50px;
 }
 .title-blue {
 	color: #3A2C7C;
@@ -585,7 +589,7 @@ p.nuevo {
 }
 
 footer.int {
-	margin-top: 150px;
+	margin-top: 120px;
 }
 a, a:hover {
     color: inherit;
