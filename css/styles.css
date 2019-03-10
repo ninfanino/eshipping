@@ -14,6 +14,7 @@ html {
 	background-color: #fff;
 	width: 100%;
 	top: 0px;
+	left: 0px !important;
 	z-index: 10;
 	height: 54px;
 }
@@ -317,6 +318,7 @@ html {
 }
 .section-tpl .img[data-file="icono1"] img {
     max-width: 800px;
+    width: 100%;
 }
 footer {
 	background: #3A2C7C;
@@ -601,4 +603,8 @@ a, a:hover {
 }
 .contact-msj {
 	color: #EA6424;
+}
+.txt-contact { 
+	margin-bottom: 20px;
+	font-weight: 700;
 }

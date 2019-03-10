@@ -57,9 +57,23 @@
     	height: auto;
 	}
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
 	.capa-gradient {
     	background-size: 800%;
+	}
+	.clip-nosotros {
+		-webkit-clip-path: ellipse(150% 80% at 50% 0%);
+    	clip-path: ellipse(150% 80% at 50% 0%);
+	}
+	.section-acerca .txt-acerca {
+    	margin-top: 100px;
+	}
+	.mask-envios {
+    	height: 220px;
+	}
+	.mask-envios img {
+		height: 280px;
+    	object-fit: cover
 	}
 }
 @media (max-height: 420px) {

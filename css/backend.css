@@ -13,7 +13,7 @@ html,body{
     cursor: pointer;
 }
 .blurred-bg-container {
-	background: url('../assets/img/bg-backend.jpg');
+	background: url('../assets/img/bg.png');
 	height: 100vh; /* h */
 	width: 100%;
 	background-size: cover;
@@ -48,8 +48,8 @@ html,body{
     position: absolute;
     width: 24%;
     left: 38%;
-    height: 80%;
-    top: 10%;
+    height: 320px;
+    top: 18%;
     padding: 20px 30px;
 }
 .label {

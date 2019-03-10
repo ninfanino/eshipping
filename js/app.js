@@ -175,6 +175,8 @@ $(function() {
         mensaje: mensaje
       };
 
+      console.log(data);
+
       if(name != "" && email != "" && telefono != "" && mensaje != "") {
         $('.contact-msj').html('');
         $.ajax({
