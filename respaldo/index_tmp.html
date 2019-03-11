@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eshipping</title>
+</head>
+
+<body>
+    
+    
+
+	<script type="text/javascript">
+$(document).ready(function () {
+    showModal("Welcome to PPS Inc.","<iframe width='100%' height='100%' class='youtube-iframe' src='https://www.youtube.com/embed/AziJPOF9ybQ?rel=0&amp;showinfo=0?rel=0&autoplay=1' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+    function showModal(title,content){
+        $('#videoModal .modal-title').html(title);
+        $('#videoModal .modal-body').html(content);
+        $('#videoModal').modal('show');
+    }
+
+
+
+//Funcion que captura el evento de cierre de modal
+		$("#videoModal").on('hidden.bs.modal', function () {
+			//Se reiniciara el frame de youtube pero sin el parametro de autoplay
+		       $('.youtube-iframe').each(function(index) {
+		         $(this).attr('src', 'https://www.youtube.com/embed/AziJPOF9ybQ?rel=0&amp;showinfo=0');
+		         return false;
+		       });
+		});
+});
+</script>
+
+<style type="text/css">
+	.video-container {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px; height: 0; overflow: hidden;
+		}
+
+		.video-container iframe,
+		.video-container object,
+		.video-container embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		}
+</style>
+
+    
+<center>
+<img src="mockupweb.png" width="1600" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="864,262,1033,339" href="https://pps-eshipping.com/eshipping-frontend-release/Forms/Login.aspx" />
+</map>
+</center>
+
+
+</body>
+</html>

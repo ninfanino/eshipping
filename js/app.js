@@ -161,6 +161,38 @@ $(function() {
       $('.open-menu-mobile').removeClass('open');
   });
 
+  $(document).on('click', '.open-form', function() {
+    $('.form-chat').removeClass('hidden');
+  });
+
+  $(document).on('click', '.btn-chat', function() {
+      var data = $('.num-chat').val();
+
+      if(data != "") {
+        $('.contact-msj').html('');
+        $.ajax({
+            type: "POST",
+            url: "phone.php",
+            data: data,
+            success: function(data){
+                $('.form-chat').addClass('hidden');
+                $('.phone-send').removeClass('hidden');
+
+                setTimeout(function(){ 
+                  $('.msj-send').removeClass('hidden'); 
+                }, 1200);
+            }
+        });
+      } 
+  });
+
+  $(document).on('click', '.close-chat', function() {
+    $('.form-chat').addClass('hidden');
+    $('.phone-send').addClass('hidden');
+    $('.msj-send').addClass('hidden');
+    $('.num-chat').val('');
+  });
+
 
   $(document).on('click', '.btn-send', function() {
       var name = $('#name').val();
