@@ -662,6 +662,7 @@ a, a:hover {
 	box-shadow: 0px 2px 3px rgba(0,0,0,.16);
 	display: inline-block;
 	color: #ccc;
+	text-align: center;
 }
 .btn-chat {
 	background: #3A2C7C;
@@ -678,6 +679,7 @@ a, a:hover {
 	background: #3A2C7C;
 	color: #fff;
 	vertical-align: bottom;
+	
 }
 .btn-photo-user {
 	width: 60px;
