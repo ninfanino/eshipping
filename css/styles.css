@@ -305,10 +305,15 @@ html {
 	border-radius: 5px;
 	margin-bottom: 10px;
 	text-align: center;
+	position: relative;
 }
 .box img {
 	max-width: 200px;
 	margin: 50px 0px;
+}
+.gallery_container .gallery_item img {
+		margin-top: 0px;
+		margin-bottom: 0px;
 }
 .box .txt-slogan:last-child {
 	margin-bottom: 50px;
@@ -371,7 +376,7 @@ footer img {
     background: url(../assets/img/big_logo.svg) no-repeat;
 
     animation: movimiento2 60s infinite linear alternate;
-    background-size: 300%;
+    background-size: cover;
 }
 .section-contacto {
 	position: relative;
@@ -699,4 +704,8 @@ a, a:hover {
 }
 .hidden {
 	display: none;
+}
+.part-tese .gallery_container .gallery_wrap {
+	margin-left: -360px; 
+	margin-top: -260px;
 }
