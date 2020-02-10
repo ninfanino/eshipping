@@ -16,20 +16,22 @@ html {
 	top: 0px;
 	left: 0px !important;
 	z-index: 10;
-	height: 54px;
+	height: 100px;
+	align-items: flex-start;
 }
 .logo {
 	position: absolute;
+	cursor: pointer;
 }
 .logo img {
-	width: 150px;
+	width: 180px;
 }
 .menu {
 	margin:0 auto;
 }
 .item-menu {
 	display: inline-block;
-	padding: 10px 30px;
+	padding: 20px 15px;
 	cursor: pointer;
 	border-top: 2px solid;
 	border-color: #fff;
@@ -61,6 +63,13 @@ html {
 	text-align: right;
 	cursor: pointer;
 }
+.btn-open-mobile, .txt-menu {
+	display: inline-block;
+    vertical-align: middle;
+}
+.txt-menu {
+	text-transform: uppercase;
+}
 .menu-mobile span {
 	height: 4px;
 	width: 25px;
@@ -81,7 +90,8 @@ html {
 }
 .menu-right {
 	position: absolute;
-	right: 20px;
+	left: 0px;
+    top: 70px;
 }
 .rastreo {
 	font-size: 14px;
@@ -217,13 +227,13 @@ html {
 	z-index: 2;
 }
 .col-info.orange {
-	border:1px solid #EA6424;
+	border:1px solid #fab62e;
 }
 .col-info.blue {
-	border:1px solid #3A2C7C;
+	border:1px solid #21b3a2;
 }
 .col-info.yellow {
-	border:1px solid #FCB72C;
+	border:1px solid #382e77;
 }
 .col-icon {
 	position: absolute;
