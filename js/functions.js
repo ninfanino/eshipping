@@ -376,6 +376,267 @@
         $('.pre-loader').removeClass('show');
       }
   });
+
+  //casos exito ready
+  $(document).on('click', '#save-casos', function() {
+    $('.pre-loader').addClass('show');
+
+    var title = $("#title").val();
+    var text = $("#text").val();
+    var file = $("#file")[0].files[0];
+
+    var titlebox1 = $("#titlebox1").val();
+    var subtitlebox1 = $("#subtitlebox1").val();
+    var icono1 = $("#icono1")[0].files[0];
+
+    var titlebox2 = $("#titlebox2").val();
+    var subtitlebox2 = $("#subtitlebox2").val();
+    var icono2 = $("#icono2")[0].files[0];
+
+    var titlebox3 = $("#titlebox3").val();
+    var subtitlebox3 = $("#subtitlebox3").val();
+    var icono3 = $("#icono3")[0].files[0];
+
+    var titlebox4 = $("#titlebox4").val();
+    var subtitlebox4 = $("#subtitlebox4").val();
+    var icono4 = $("#icono4")[0].files[0];
+
+    var titlebox5 = $("#titlebox5").val();
+    var subtitlebox5 = $("#subtitlebox5").val();
+    var icono5 = $("#icono5")[0].files[0];
+
+    var titlebox6 = $("#titlebox6").val();
+    var subtitlebox6 = $("#subtitlebox6").val();
+    var icono6 = $("#icono6")[0].files[0];
+
+    var data = {
+        title:title, 
+        text:text,
+        titlebox1:titlebox1,
+        subtitlebox1:subtitlebox1,
+        titlebox2:titlebox2,
+        subtitlebox2:subtitlebox2,
+        titlebox3:titlebox3,
+        subtitlebox3:subtitlebox3,
+        titlebox4:titlebox4,
+        subtitlebox4:subtitlebox4,
+        titlebox5:titlebox5,
+        subtitlebox5:subtitlebox5,
+        titlebox6:titlebox6,
+        subtitlebox6:subtitlebox6,
+    };
+
+    
+    firebase.database().ref("data/casos").update(data);
+
+    var count = 0;
+    function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4();
+      }
+
+    if($("#file").val() != '') {
+      count++;
+      
+      var nameFile = guid();
+
+
+      var uploadTask2 = storageRef.child('imagen/'+ nameFile).put(file);
+      subirImagenAFirebase(file, uploadTask2, 'casos', 'url');
+
+      uploadTask2.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono1").val() != '') {
+      count++;
+      
+      var nameFile1 = guid();
+
+
+      var uploadTask3 = storageRef.child('imagen/'+ nameFile1).put(icono1);
+
+      
+      subirImagenAFirebase(icono1, uploadTask3, 'casos', 'icono1');
+
+      uploadTask3.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono2").val() != '') {
+      count++;
+      
+      var nameFile = guid();
+
+
+      var uploadTask4 = storageRef.child('imagen/'+ nameFile).put(icono2);
+
+      
+      subirImagenAFirebase(icono2, uploadTask4, 'casos', 'icono2');
+
+      uploadTask4.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono3").val() != '') {
+      count++;
+      function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4();
+      }
+      var nameFile = guid();
+
+
+      var uploadTask5 = storageRef.child('imagen/'+ nameFile).put(icono3);
+
+      
+      subirImagenAFirebase(icono3, uploadTask5, 'casos', 'icono3');
+
+      uploadTask5.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono4").val() != '') {
+      count++;
+      function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4();
+      }
+      var nameFile = guid();
+
+
+      var uploadTask6 = storageRef.child('imagen/'+ nameFile).put(icono4);
+
+      
+      subirImagenAFirebase(icono4, uploadTask6, 'casos', 'icono4');
+
+      uploadTask6.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono5").val() != '') {
+      count++;
+      function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4();
+      }
+      var nameFile = guid();
+
+
+      var uploadTask7 = storageRef.child('imagen/'+ nameFile).put(icono5);
+
+      
+      subirImagenAFirebase(icono5, uploadTask7, 'casos', 'icono5');
+
+      uploadTask7.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if($("#icono6").val() != '') {
+      count++;
+      function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4();
+      }
+      var nameFile = guid();
+
+
+      var uploadTask8 = storageRef.child('imagen/'+ nameFile).put(icono3);
+
+      
+      subirImagenAFirebase(icono6, uploadTask8, 'casos', 'icono6');
+
+      uploadTask8.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        null,
+        null,
+        function() {
+          count--;
+          if(count == 0) {
+            $('.pre-loader').removeClass('show');
+          }
+        }
+      );
+    } 
+
+    if(($("#file").val() == '') && ($("#icono1").val() == '') && ($("#icono2").val() == '') && ($("#icono3").val() == '') && ($("#icono4").val() == '') && ($("#icono5").val() == '') && ($("#icono6").val() == '')) {
+      $('.pre-loader').removeClass('show');
+    }
+});
   
   // envios ready
   $(document).on('click', '#save-envios', function() {

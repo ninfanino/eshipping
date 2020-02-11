@@ -100,9 +100,9 @@ $(function() {
         if(key == 'titlebox6' && data.val()[key] == 0) {
           $(".section-tpl .box-" + key).addClass('hidden');
         }
-        var str = data.val()[key].replace('*', '</p><p>*');
-
-        $(".section-tpl ." + key).html('<p>' + str + '</p>');
+        
+        var str = data.val()[key].replace(/\n/g, '<br \/>');
+        $(".section-tpl ." + key).html(str);
       } else {
         if(key == 'url'){
           $('.section-tpl .img[data-file="'+key+'"]').html('<img src="' + data.val()[key] +'" />');
