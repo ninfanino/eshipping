@@ -159,6 +159,45 @@ $(function() {
     }
   });
 
+  const refCasos = firebase.database().ref("data/casos");
+  refCasos.on('value', function(data){
+    let objKey = Object.keys(data.val());
+    
+    for(obj in objKey){
+      let key = objKey[obj];
+
+      if(key != 'url' && key != 'icono1' && key != 'icono2' && key != 'icono3' && key != 'icono4' && key != 'icono5' && key != 'icono6') {
+        if(key == 'titlebox1' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        if(key == 'titlebox2' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        if(key == 'titlebox3' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        if(key == 'titlebox4' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        if(key == 'titlebox5' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        if(key == 'titlebox6' && data.val()[key] == 0) {
+          $(".section-casos .box-" + key).addClass('hidden');
+        }
+        
+        var str = data.val()[key].replace(/\n/g, '<br \/>');
+        $(".section-casos ." + key).html(str);
+      } else {
+        if(key == 'url'){
+          $('.section-casos .img[data-file="'+key+'"]').html('<img src="' + data.val()[key] +'" />');
+        } else {
+          $('.section-casos .img[data-file="'+key+'"]').html('<img src="' + data.val()[key] +'" />');
+        }
+      } 
+    }
+  });
+
   $(document).on('click', '.menu-mobile', function() {
     $('.open-menu-mobile').addClass('open');
   });
@@ -171,7 +210,7 @@ $(function() {
   });
   
   $(document).on('click', '.link-envios', function() {
-    document.getElementById('section-envios').scrollIntoView();
+    document.getElementById('section-consultoria').scrollIntoView();
     $('.panel').css({'opacity':'1', 'background': '#EA6424'});
 
     setTimeout(function(){ 
@@ -189,7 +228,7 @@ $(function() {
   });
 
   $(document).on('click', '.link-consultoria', function() {
-    document.getElementById('section-consultoria').scrollIntoView();
+    document.getElementById('section-envios').scrollIntoView();
     $('.panel').css({'opacity':'1', 'background': '#FCB72C'});
 
     setTimeout(function(){ 
