@@ -126,14 +126,24 @@ html {
     position: absolute;
     width: 100%;
     z-index: 1;
-    font-size: 32px;
     text-align: center;
     top: 27vh;
 }
-.title-home {
+.title-home, .title-home2 {
     max-width: 650px;
     margin: 0 auto;
-    color: #EA6424;
+	color: #EA6424;
+	font-style: italic;
+}
+.col-icon-home, .col-txt-home {
+	display: inline-block;
+}
+.title-home {
+	font-size: 32px;
+}
+.title-home2 {
+	font-size: 40px;
+	margin-left: 20px;
 }
 .section-home {
 	height: 100vh;
@@ -259,6 +269,14 @@ html {
 .section-envios {
 	position: relative;
 }
+.section-envios .box {
+	background: rgba(247,247,247,.86) url(../assets/img/bg-consulting.png) no-repeat;
+    background-size: 250px;
+    background-position: left bottom;
+}
+.section-envios .box:first-child {
+	background: rgba(247,247,247,.86)
+}
 .mask-up {
 	 width: 0;
     height: 0;
@@ -368,6 +386,15 @@ footer img {
     background-size: 100%;
     z-index: 0;
     bottom: 5;
+}
+
+.icon-contact, .address-contact {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+}
+.address-contact {
+	padding-left: 20px;
 }
 
 @keyframes movimiento2{
