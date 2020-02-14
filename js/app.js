@@ -282,9 +282,7 @@ $(function() {
   });
 
   $(document).on('click', '.close-chat', function() {
-    $('.form-chat').addClass('hidden');
-    $('.phone-send').addClass('hidden');
-    $('.msj-send').addClass('hidden');
+    $('.chat').addClass('hidden');
     $('.num-chat').val('');
   });
 
