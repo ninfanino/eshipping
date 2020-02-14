@@ -118,19 +118,19 @@
   $(document).on('click', '#save-inicio', function() {
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
-      //var text = $("#text").val();
+      var title2 = $("#title2").val();
       var file = $(".input-file")[0].files[0];
+      var icono1 = $("#icono1")[0].files[0];
 
       var data = {
-          title:title
+          title:title,
+          title2:title2
       };
 
       firebase.database().ref("data/inicio").update(data);
 
-      if( $(".input-file")[0].files.length == 0 ){
-          $('.pre-loader').removeClass('show');
-      } else {
-        function guid() {
+      var count = 0;
+      function guid() {
           function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
               .toString(16)
@@ -138,22 +138,51 @@
           }
           return s4() + s4();
         }
+
+      if($("#file").val() != '') {
+        count++;
+        
         var nameFile = guid();
 
 
-        var uploadTask1 = storageRef.child('imagen/'+ nameFile).put(file);
+        var uploadTask2 = storageRef.child('imagen/'+ nameFile).put(file);
+        subirImagenAFirebase(file, uploadTask2, 'inicio', 'url');
 
-        
-        subirImagenAFirebase(file, uploadTask1, 'inicio', 'url');
-
-        uploadTask1.on(
+        uploadTask2.on(
           firebase.storage.TaskEvent.STATE_CHANGED,
           null,
           null,
           function() {
-            $('.pre-loader').removeClass('show');
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
           }
-        );   
+        );
+      } 
+
+      if($("#icono1").val() != '') {
+        count++;
+        
+        var nameFile1 = guid();
+
+
+        var uploadTask3 = storageRef.child('imagen/'+ nameFile1).put(icono1);
+
+        
+        subirImagenAFirebase(icono1, uploadTask3, 'inicio', 'icono1');
+
+        uploadTask3.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          null,
+          null,
+          function() {
+            count--;
+            if(count == 0) {
+              $('.pre-loader').removeClass('show');
+            }
+          }
+        );
       } 
   });
 

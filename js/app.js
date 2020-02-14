@@ -19,9 +19,16 @@ $(function() {
       if(key == 'title') {
         $('.title-home').html(data.val()[key]);
       } 
+      if(key == 'title2') {
+        $('.title-home2').html(data.val()[key]);
+      } 
       if(key == 'url') {
         var url = 'url('+data.val()[key]+')';
         $('.container-portada').css('background-image', url);
+      }
+      if(key == 'icono1') {
+        var url = 'url('+data.val()[key]+')';
+        $('.col-icon-home').css('background-image', url);
       }
     }
   });
