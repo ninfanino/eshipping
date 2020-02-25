@@ -119,12 +119,14 @@
       $('.pre-loader').addClass('show');
       var title = $("#title").val();
       var title2 = $("#title2").val();
+      var video = $("#video").val();
       var file = $(".input-file")[0].files[0];
       var icono1 = $("#icono1")[0].files[0];
 
       var data = {
           title:title,
-          title2:title2
+          title2:title2,
+          video:video
       };
 
       firebase.database().ref("data/inicio").update(data);

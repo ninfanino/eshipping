@@ -22,6 +22,11 @@ $(function() {
       if(key == 'title2') {
         $('.title-home2').html(data.val()[key]);
       } 
+      if(key == 'video' && data.val()[key]) {
+        $('#myModal').modal('show');
+
+        $('.modal-body').html(data.val()[key]);
+      } 
       if(key == 'url') {
         var url = 'url('+data.val()[key]+')';
         $('.container-portada').css('background-image', url);
