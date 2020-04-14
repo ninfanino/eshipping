@@ -16,12 +16,12 @@ $(function() {
     
     for(obj in objKey){
       let key = objKey[obj];
-      if(key == 'title') {
+      /*if(key == 'title') {
         $('.title-home').html(data.val()[key]);
       } 
       if(key == 'title2') {
         $('.title-home2').html(data.val()[key]);
-      } 
+      } */
       if(key == 'video' && data.val()[key]) {
         $('#myModal').modal('show');
 
@@ -31,10 +31,10 @@ $(function() {
         var url = 'url('+data.val()[key]+')';
         $('.container-portada').css('background-image', url);
       }
-      if(key == 'icono1') {
+      /*if(key == 'icono1') {
         var url = 'url('+data.val()[key]+')';
         $('.col-icon-home').css('background-image', url);
-      }
+      }*/
     }
   });
 
@@ -221,9 +221,18 @@ $(function() {
     document.getElementById('home').scrollIntoView();
   });
   
+  $(document).on('click', '.link-inicio', function() {
+    document.getElementById('home').scrollIntoView();
+    $('.panel').css({'opacity':'1', 'background': '#3A2C7C'});
+
+    setTimeout(function(){ 
+      $('.panel').css({'opacity':'0', 'background': '#FFF'}); 
+    }, 800);
+  });
+
   $(document).on('click', '.link-envios', function() {
     document.getElementById('section-consultoria').scrollIntoView();
-    $('.panel').css({'opacity':'1', 'background': '#EA6424'});
+    $('.panel').css({'opacity':'1', 'background': '#3A2C7C'});
 
     setTimeout(function(){ 
       $('.panel').css({'opacity':'0', 'background': '#FFF'}); 
@@ -232,7 +241,7 @@ $(function() {
 
   $(document).on('click', '.link-tpl', function() {
     document.getElementById('section-tpl').scrollIntoView();
-    $('.panel').css({'opacity':'1', 'background': '#3A2C7C'});
+    $('.panel').css({'opacity':'1', 'background': '#1ab2a1'});
 
     setTimeout(function(){ 
       $('.panel').css({'opacity':'0', 'background': '#FFF'}); 
@@ -250,7 +259,7 @@ $(function() {
 
   $(document).on('click', '.link-contacto', function() {
     document.getElementById('section-contacto').scrollIntoView();
-    $('.panel').css({'opacity':'1', 'background': '#3A2C7C'});
+    $('.panel').css({'opacity':'1', 'background': '#EA6424'});
 
     setTimeout(function(){ 
       $('.panel').css({'opacity':'0', 'background': '#FFF'}); 
@@ -261,9 +270,9 @@ $(function() {
       $('.open-menu-mobile').removeClass('open');
   });
 
-  $(document).on('click', '.open-form', function() {
+  /*$(document).on('click', '.open-form', function() {
     $('.form-chat').removeClass('hidden');
-  });
+  });*/
 
   $(document).on('click', '.btn-chat', function() {
       var data = $('.num-chat').val();

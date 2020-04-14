@@ -6,6 +6,12 @@
 		width: 900px;
 		margin-left: -450px;
 	}
+	.menu-mobile {
+		display: inline-block;
+	}
+	.menu {
+		display: none;
+	}
 }
 @media (max-width: 991px) {
 	.title-acerca {
